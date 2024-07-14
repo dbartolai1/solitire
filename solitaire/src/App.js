@@ -26,11 +26,17 @@ function App() {
     return newDeck
   }
 
-  setDeck(shuffleDeck(orderedDeck)) //sets the deck state to be a new shuffled deck 
+  const shuffledDeck = shuffleDeck(orderedDeck)
+
+  const shuffleButton = () => {
+    setDeck(shuffledDeck)
+  }
 
   return (
     <div className="App">
       <h1>Solitaire</h1>
+      <button onClick={shuffleButton}>Shuffle Deck</button>
+      {shuffledDeck[51]}
     </div>
   );
 }
